@@ -210,7 +210,47 @@ class CosmicClicker:
         "Crystal Bloom": {"effect": lambda: void_crystals += 3, "chance": 0.0005, "message": "Crystal Bloom! +3 Void Crystals!"},
         "Research Breakthrough": {"effect": lambda: research_points += 10, "chance": 0.0003, "message": "Research Breakthrough! +10 Research Points!"}
     }
+def create_html_file():
+    html_content = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Cosmic Clicker</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+            #game-container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="game-container">
+            <h1>Cosmic Clicker</h1>
+            <p>To play this game, you need to run the Python script:</p>
+            <pre><code>python cosmic_clicker.py</code></pre>
+            <p>Make sure you have Python and tkinter installed.</p>
+            <p>This page is just a placeholder because GitHub Pages does not run python code.</p>
+            <p>If you would like to donate to me, you can click the button in the python game.</p>
+        </div>
+    </body>
+    </html>
+    """
+    with open("index.html", "w") as f:
+        f.write(html_content)
 
-root = tk.Tk()
-game = CosmicClicker(root)
-root.mainloop()
+if __name__ == "__main__":
+    create_html_file()
+    root = tk.Tk()
+    game = CosmicClicker(root)
+    root.mainloop()
